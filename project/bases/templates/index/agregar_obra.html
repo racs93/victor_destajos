@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Dashboard</title>
+
+  <!-- Custom fonts for this template-->
+  <link rel="stylesheet" href="{% static 'index/vendor/fontawesome-free/css/all.min.css' %}" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'index/css/style.css' %}">
+
+  <!-- Custom styles for this template-->
+  <link rel="stylesheet" href="{% static 'index/css/sb-admin-2.min.css' %}">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'index' %}">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Dashboard Administrativo</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Ingeniería Civil e Instalaciones</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Concentrado semanal</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Concentrado de la semana:</h6>
+            <a class="collapse-item" href="{% url 'buttons' %}">Obras</a>
+            <a class="collapse-item" href="{% url 'cards' %}">Oficinas</a>
+			<a class="collapse-item" href="#">Combustible</a>
+			<a class="collapse-item" href="#">Miscelaneos</a>
+			<a class="collapse-item" href="#">General</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilidades</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Utilidades:</h6>
+            <a class="collapse-item" href="{% url 'agregar_personal' %}">Agregar Personal</a>
+            <a class="collapse-item" href="{% url 'utilities_border' %}">Agregar compra</a>
+            <a class="collapse-item" href="{% url 'agregar_obra' %}">Vales de combustible</a>
+            <a class="collapse-item" href="{% url 'utilities_other' %}">Agregar obra</a>
+			<a class="collapse-item" href="#">Prestamos</a>
+			<a class="collapse-item" href="#">Descuentos</a>
+			<a class="collapse-item" href="#">Proveedor</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="{% url 'login' %}">Login</a>
+            <a class="collapse-item" href="{% url 'register' %}">Register</a>
+            <a class="collapse-item" href="{% url 'forgot_password' %}">Forgot Password</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="{% url 'error' %}">404 Page</a>
+            <a class="collapse-item" href="{% url 'blank' %}">Blank Page</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'charts' %}">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'tables' %}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+	<div class="container addEmployee">
+		<h1 class="display-4 text-center">Agregar Obra</h1>
+		<form>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Nombre de la obra</label>
+				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de la obra">
+			</div>
+			<fieldset class="obraAgregarEstado form-group row">
+				<legend class="col-form-legend">Direccion de la obra</legend>
+				<select class="custom-select">
+					<option selected>Estado</option>
+					<option value="1">Aguascalientes</option>
+					<option value="2">Baja California</option>
+					<option value="3">Baja California Sur</option>
+					<option value="4">Campeche</option>
+					<option value="5">Chiapas</option>
+					<option value="6">Chihuahua</option>
+					<option value="7">Ciudad de Mexico</option>
+					<option value="8">Coahuila</option>
+					<option value="9">Colima</option>
+					<option value="10">Durango</option>
+					<option value="11">Estado de Mexico</option>
+					<option value="12">Guanajuato</option>
+					<option value="13">Guerrero</option>
+					<option value="14">Hidalgo</option>
+					<option value="15">Jalisco</option>
+					<option value="16">Michoacán</option>
+					<option value="17">Morelos</option>
+					<option value="18">Nayarit</option>
+					<option value="19">Nuevo León</option>
+					<option value="20">Oaxaca</option>
+					<option value="21">Puebla</option>
+					<option value="22">Querétaro</option>
+					<option value="23">Quintana Roo</option>
+					<option value="24">San Luis Potosi</option>
+					<option value="25">Sinaloa</option>
+					<option value="26">Sonora</option>
+					<option value="27">Tabasco</option>
+					<option value="28">Tamaulipas</option>
+					<option value="29">Tlaxcala</option>
+					<option value="30">Veracruz</option>
+					<option value="31">Yucatán</option>
+					<option value="32">Zacatecas</option>
+				</select>
+			</fieldset>
+			<div class="form-group">
+				<input type="text" class="addObraForms form-control" placeholder="Municipio - Delegacion">
+				<input type="text" class="addObraForms form-control" placeholder="calle - numero - cruzamientos">
+				<input type="text" class="addObraForms form-control"  placeholder="Fraccionamiento/colonia">
+			</div>
+			<div class="form-group row">
+				<label for="example-date-input" class="col-2 col-form-label">Fecha de inicio</label>
+				<div class="col-10">
+					<input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Agregar obra</button>
+		</form>
+	</div>
+	</div>
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static 'index/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'index/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'index/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'index/js/sb-admin-2.min.js' %}"></script>
+
+  <!-- Page level plugins -->
+  <script src="{% static 'index/vendor/chart.js/Chart.min.js' %}"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="{% static 'index/js/demo/chart-area-demo.js' %}"></script>
+  <script src="{% static 'index/js/demo/chart-pie-demo.js' %}"></script>
+
+</body>
+</html>
